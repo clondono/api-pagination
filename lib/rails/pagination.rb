@@ -14,7 +14,7 @@ module Rails
       options[:json] = collection if options[:json]
       options[:xml]  = collection if options[:xml]
 
-      render options
+      # render options
     end
 
     def paginate_with(collection)
