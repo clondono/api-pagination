@@ -6,6 +6,8 @@ module Rails
       options    = options_or_collection.extract_options!
       collection = options_or_collection.first
 
+      puts _paginate_collection(collection, options) if collection
+
       return _paginate_collection(collection, options) if collection
 
       collection = options[:json] || options[:xml]
@@ -14,7 +16,7 @@ module Rails
       options[:json] = collection if options[:json]
       options[:xml]  = collection if options[:xml]
 
-      # render options
+       return options
     end
 
     def paginate_with(collection)
